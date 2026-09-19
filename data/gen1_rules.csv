@@ -1,0 +1,15 @@
+rule_id,value,notes,source,source_url
+ruleset,Generation I / Pokémon Red-Blue style mechanics,Scope used consistently across dataset,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Type_chart/GenI
+pokemon_scope,National Pokédex #001-#151,151 original Pokémon only,,
+level,70,All Pokémon rows are standardized to Level 70,,
+stat_benchmark,DV=15; Stat EXP=63001 in each of the five Gen I permanent stats,"Deterministic maximum-stat benchmark; this is a contest assumption, not a claim that all in-game Pokémon have these values",Bulbapedia EV/DV/Stat formulas,https://bulbapedia.bulbagarden.net/wiki/DV
+special_stat,One Special stat,Gen I does not have separate Special Attack and Special Defense; dataset exposes level70_special and retains sp_attack/sp_defense as compatibility aliases,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/SpDef
+damage_formula,"Gen I damage formula with critical-hit level doubling, stat-quartering when A or D >255, STAB, type effectiveness, and random factor 217-255/255",Precomputed standard-formula interactions use this rule set,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Damage
+critical_hits,Gen I critical mechanics,Critical hits use unmodified stats and the critical-hit damage path; high-critical moves are explicitly flagged in moves.csv,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Crit
+critical_rate,"Normal critical threshold = floor(base Speed/2), high-critical moves use 8x threshold capped at 255","Probability is threshold/256; this is static base-speed critical data, while battle-state effects such as Focus Energy are not precomputed",Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Crit
+type_chart,"15 Gen I types, including Generation-I-specific Ghost/Psychic and Bug/Poison relationships",225 attacker/defender pairs,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Type_chart/GenI
+moves,165 Generation-I moves,Move list count matches Bulbapedia category,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Category:Generation_I_moves
+abilities,None,Generation I has no ability mechanic; ability columns are blank by design,,
+battle_interactions_scope,Standard base-power damage moves only,Special/fixed/OHKO/conditional mechanics are represented in moves.csv via damage_model and special_rule rather than fabricated formula damage,Bulbapedia,https://bulbapedia.bulbagarden.net/wiki/Damage
+gym_teams,Empty,"No challenger-specific Level-70 gym rosters were supplied, so none were invented",,
+battle_states_actions,Empty,No historical battle trajectories were supplied; contestants are expected to generate states/actions in their own agent/simulator,,

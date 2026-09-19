@@ -1,0 +1,1 @@
+state_id,action_id,action_type,pokemon_id,move_id,target_id,damage_min,damage_max,damage_average,ko_result,next_state_id

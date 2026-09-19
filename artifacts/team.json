@@ -1,0 +1,56 @@
+[
+  {
+    "species": "Mewtwo",
+    "moves": [
+      "Psychic",
+      "Solarbeam",
+      "Blizzard",
+      "Fire Blast"
+    ]
+  },
+  {
+    "species": "Zapdos",
+    "moves": [
+      "Sky Attack",
+      "Thunderbolt",
+      "Thunder",
+      "Drill Peck"
+    ]
+  },
+  {
+    "species": "Articuno",
+    "moves": [
+      "Sky Attack",
+      "Blizzard",
+      "Ice Beam",
+      "Fly"
+    ]
+  },
+  {
+    "species": "Moltres",
+    "moves": [
+      "Sky Attack",
+      "Fire Blast",
+      "Fly",
+      "Hyper Beam"
+    ]
+  },
+  {
+    "species": "Dragonite",
+    "moves": [
+      "Blizzard",
+      "Fire Blast",
+      "Thunderbolt",
+      "Surf"
+    ]
+  },
+  {
+    "species": "Gyarados",
+    "moves": [
+      "Hydro Pump",
+      "Surf",
+      "Blizzard",
+      "Fire Blast"
+    ]
+  }
+]

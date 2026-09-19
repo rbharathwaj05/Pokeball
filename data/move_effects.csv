@@ -1,0 +1,166 @@
+move_name,kind,status,chance,stat,delta,target,note
+Absorb,none,,,,,,
+Acid,stat_change,,10,def,-1,target,
+Acid Armor,stat_change,,100,def,2,user,
+Agility,stat_change,,100,spe,2,user,
+Amnesia,stat_change,,100,spc,2,user,
+Aurora Beam,stat_change,,10,atk,-1,target,
+Barrage,none,,,,,,
+Barrier,stat_change,,100,def,2,user,
+Bide,unmodeled,,,,,,2-3 turn damage-absorb-and-return; not simulated in v1
+Bind,unmodeled,,,,,,2-5 turn trap; simplified to a single-hit attack in v1
+Bite,flinch,,10,,,,
+Blizzard,status,freeze,10,,,,
+Body Slam,status,paralyze,30,,,,
+Bone Club,flinch,,10,,,,
+Bonemerang,fixed_multi_hit,,,,2,,
+Bubble,stat_change,,10,spe,-1,target,
+Bubblebeam,stat_change,,10,spe,-1,target,
+Clamp,unmodeled,,,,,,2-5 turn trap; simplified to a single-hit attack in v1
+Comet Punch,none,,,,,,
+Confuse Ray,status,confuse,100,,,,
+Confusion,status,confuse,10,,,,
+Constrict,stat_change,,10,spe,-1,target,
+Conversion,unmodeled,,,,,,changes user's type; not simulated in v1
+Counter,unmodeled,,,,,,reflects physical damage; not simulated in v1
+Crabhammer,none,,,,,,
+Cut,none,,,,,,
+Defense Curl,stat_change,,100,def,1,user,
+Dig,none,,,,,,
+Disable,unmodeled,,,,,,disables a random opponent move; not simulated in v1
+Dizzy Punch,none,,,,,,
+Double Kick,fixed_multi_hit,,,,2,,
+Double Team,stat_change,,100,eva,1,user,
+Double-edge,none,,,,,,
+Doubleslap,multi_hit_2to5,,,,,,
+Dragon Rage,none,,,,,,fixed 40 damage; handled via damage_model in engine
+Dream Eater,none,,,,,,
+Drill Peck,none,,,,,,
+Earthquake,none,,,,,,
+Egg Bomb,none,,,,,,
+Ember,status,burn,10,,,,
+Explosion,explosion,,,,,,
+Fire Blast,status,burn,30,,,,
+Fire Punch,status,burn,10,,,,
+Fire Spin,unmodeled,,,,,,2-5 turn trap; simplified to a single-hit attack in v1
+Fissure,none,,,,,,
+Flamethrower,status,burn,10,,,,
+Flash,stat_change,,100,acc,-1,target,
+Fly,none,,,,,,
+Focus Energy,unmodeled,,,,,,Gen I bug inverts intended crit-rate effect; not simulated in v1
+Fury Attack,none,,,,,,
+Fury Swipes,none,,,,,,
+Glare,status,paralyze,100,,,,
+Growl,stat_change,,100,atk,-1,target,
+Growth,stat_change,,100,spc,1,user,
+Guillotine,none,,,,,,
+Gust,none,,,,,,
+Harden,stat_change,,100,def,1,user,
+Haze,unmodeled,,,,,,clears all stat/status mods both sides; not simulated in v1
+Headbutt,flinch,,30,,,,
+Hi Jump Kick,crash_on_miss,,,,,,
+Horn Attack,none,,,,,,
+Horn Drill,none,,,,,,
+Hydro Pump,none,,,,,,
+Hyper Beam,none,,,,,,
+Hyper Fang,flinch,,10,,,,
+Hypnosis,status,sleep,100,,,,
+Ice Beam,status,freeze,10,,,,
+Ice Punch,status,freeze,10,,,,
+Jump Kick,crash_on_miss,,,,,,
+Karate Chop,none,,,,,,
+Kinesis,stat_change,,100,acc,-1,target,
+Leech Life,drain,,,,50,,
+Leech Seed,unmodeled,,,,,,per-turn HP drain until switch; not simulated in v1
+Leer,stat_change,,100,def,-1,target,
+Lick,status,paralyze,30,,,,
+Light Screen,screen,,,spd,,,
+Lovely Kiss,status,sleep,100,,,,
+Low Kick,flinch,,30,,,,
+Meditate,stat_change,,100,atk,1,user,
+Mega Drain,none,,,,,,
+Mega Kick,none,,,,,,
+Mega Punch,none,,,,,,
+Metronome,unmodeled,,,,,,calls a random move; not simulated in v1
+Mimic,unmodeled,,,,,,temporarily learns opponent's move; not simulated in v1
+Minimize,stat_change,,100,eva,1,user,
+Mirror Move,unmodeled,,,,,,repeats opponent's last move; not simulated in v1
+Mist,unmodeled,,,,,,blocks incoming stat drops; not simulated in v1
+Night Shade,none,,,,,,damage = user level; handled via damage_model in engine
+Pay Day,none,,,,,,"in-game currency flavor effect, irrelevant to battle"
+Peck,none,,,,,,
+Petal Dance,unmodeled,,,,,,2-3 turn rampage + self-confuse after; simplified to a plain attack in v1
+Pin Missile,none,,,,,,
+Poison Gas,status,poison,100,,,,
+Poison Sting,status,poison,20,,,,
+Poisonpowder,status,poison,100,,,,
+Pound,none,,,,,,
+Psybeam,status,confuse,10,,,,
+Psychic,stat_change,,30,spc,-1,target,
+Psywave,none,,,,,,random damage handled via damage_model in engine
+Quick Attack,none,,,,,,priority already captured by the moves.csv priority column
+Rage,unmodeled,,,,,,damage rises when hit while raging; not simulated in v1
+Razor Leaf,none,,,,,,
+Razor Wind,none,,,,,,
+Recover,heal,,,,50,,
+Reflect,screen,,,def,,,
+Rest,heal,,,,100,,full heal; sleep-self side effect not simulated in v1
+Roar,unmodeled,,,,,,forces opponent switch; not simulated in v1
+Rock Slide,none,,,,,,
+Rock Throw,none,,,,,,
+Rolling Kick,flinch,,30,,,,
+Sand-Attack,stat_change,,100,acc,-1,target,
+Scratch,none,,,,,,
+Screech,stat_change,,100,def,-2,target,
+Seismic Toss,none,,,,,,damage = user level; handled via damage_model in engine
+Selfdestruct,explosion,,,,,,
+Sharpen,stat_change,,100,atk,1,user,
+Sing,status,sleep,100,,,,
+Skull Bash,none,,,,,,
+Sky Attack,none,,,,,,
+Slam,none,,,,,,
+Slash,none,,,,,,
+Sleep Powder,status,sleep,100,,,,
+Sludge,status,poison,30,,,,
+Smog,status,poison,30,,,,
+Smokescreen,stat_change,,100,acc,-1,target,
+Softboiled,heal,,,,50,,
+Solarbeam,none,,,,,,
+Sonicboom,none,,,,,,fixed 20 damage; handled via damage_model in engine
+Spike Cannon,none,,,,,,
+Splash,unmodeled,,,,,,does nothing
+Spore,status,sleep,100,,,,
+Stomp,flinch,,30,,,,
+Strength,none,,,,,,
+String Shot,stat_change,,100,spe,-1,target,
+Struggle,none,,,,,,engine auto-selects this when no move has PP left; recoil_fraction column already covers its damage
+Stun Spore,status,paralyze,100,,,,
+Submission,none,,,,,,
+Substitute,unmodeled,,,,,,decoy body; not simulated in v1
+Super Fang,none,,,,,,halves target HP; handled via damage_model in engine
+Supersonic,status,confuse,100,,,,
+Surf,none,,,,,,
+Swift,always_hit,,,,,,
+Swords Dance,stat_change,,100,atk,2,user,
+Tackle,none,,,,,,
+Tail Whip,stat_change,,100,def,-1,target,
+Take Down,none,,,,,,
+Teleport,unmodeled,,,,,,flee-battle utility; not simulated in v1
+Thrash,unmodeled,,,,,,2-3 turn rampage + self-confuse after; simplified to a plain attack in v1
+Thunder,status,paralyze,10,,,,
+Thunder Wave,status,paralyze,100,,,,
+Thunderbolt,status,paralyze,10,,,,
+Thunderpunch,status,paralyze,10,,,,
+Thundershock,status,paralyze,10,,,,
+Toxic,status,poison,100,,,,badly poisons (escalating) -- modeled as standard poison in v1
+Transform,unmodeled,,,,,,copies opponent's stats/moves; not simulated in v1
+Tri Attack,none,,,,,,
+Twineedle,status,poison,20,,,,
+Vicegrip,none,,,,,,
+Vine Whip,none,,,,,,
+Water Gun,none,,,,,,
+Waterfall,none,,,,,,
+Whirlwind,unmodeled,,,,,,forces opponent switch; not simulated in v1
+Wing Attack,none,,,,,,
+Withdraw,stat_change,,100,def,1,user,
+Wrap,unmodeled,,,,,,2-5 turn trap; simplified to a single-hit attack in v1
