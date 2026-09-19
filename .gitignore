@@ -1,4 +1,4 @@
-data/battle_interactions.csv
+*.csv
 __pycache__/
 *.py[cod]
 *$py.class
