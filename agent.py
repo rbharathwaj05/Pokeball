@@ -1,4 +1,4 @@
-﻿"""
+"""
 agent.py — MyAgent: Main submission file for MM26AI03.
 
 Architecture:
@@ -34,10 +34,31 @@ _AGENT_DIR = os.path.dirname(os.path.abspath(__file__))
 _TEAM_JSON = os.path.join(_AGENT_DIR, "artifacts", "team.json")
 
 # ---------------------------------------------------------------------------
+# Base Agent Interface
+# ---------------------------------------------------------------------------
+
+class BaseAgent:
+    """Base interface for competition gauntlet agents."""
+
+    def build_team(
+        self,
+        species_list: List[Species],
+        moves_dict: Dict[str, Move],
+        learnsets: Dict[str, set[str]],
+    ) -> List[TeamMember]:
+        """Draft a legal team of 1-6 Pokémon with up to 4 moves each."""
+        raise NotImplementedError
+
+    def choose_action(self, obs: dict) -> Action:
+        """Choose a battle action given current observation dict."""
+        raise NotImplementedError
+
+
+# ---------------------------------------------------------------------------
 # MyAgent
 # ---------------------------------------------------------------------------
 
-class MyAgent:
+class MyAgent(BaseAgent):
     """Competition agent for MM26AI03.
 
     build_team() is called once before the gauntlet.
