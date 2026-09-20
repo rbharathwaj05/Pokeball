@@ -1,0 +1,45 @@
+{
+  "tone": "diary",
+  "name": "Diary",
+  "templates": {
+    "GymStart": [
+      { "text": "Arrived at {gym} Gym. Prepared the party for the trial ahead.", "required_fields": ["gym"] }
+    ],
+    "OpponentEnters": [
+      { "text": "They deployed {target} as their combatant.", "required_fields": ["target"] }
+    ],
+    "MoveUsed": [
+      { "text": "Ordered {actor} to execute {move}.", "required_fields": ["actor", "move"] }
+    ],
+    "DamageDealt": [
+      { "text": "{target} took {pct}% damage from the attack.", "required_fields": ["target", "pct"] }
+    ],
+    "Critical": [
+      { "text": "We scored a critical hit on their weak point.", "required_fields": [] }
+    ],
+    "SuperEffective": [
+      { "text": "The type advantage worked as calculated.", "required_fields": [] }
+    ],
+    "NotVeryEffective": [
+      { "text": "The target resisted our elemental offensive.", "required_fields": [] }
+    ],
+    "Immune": [
+      { "text": "Our attack could not harm {target}.", "required_fields": ["target"] }
+    ],
+    "Miss": [
+      { "text": "The attack failed to connect.", "required_fields": [] }
+    ],
+    "Faint": [
+      { "text": "{target} fainted and was withdrawn.", "required_fields": ["target"] }
+    ],
+    "Switch": [
+      { "text": "Recalled {actor} and sent out {target} to adjust our positioning.", "required_fields": ["actor", "target"] }
+    ],
+    "GymClear": [
+      { "text": "Earned victory at {gym}. Reorganizing for the next destination.", "required_fields": ["gym"] }
+    ],
+    "GymFail": [
+      { "text": "Lost the encounter at {gym}. Our gauntlet concludes here.", "required_fields": ["gym"] }
+    ]
+  }
+}

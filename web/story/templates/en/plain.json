@@ -1,0 +1,45 @@
+{
+  "tone": "plain",
+  "name": "Plain Factual",
+  "templates": {
+    "GymStart": [
+      { "text": "{gym} Gym started.", "required_fields": ["gym"] }
+    ],
+    "OpponentEnters": [
+      { "text": "Opponent sent out {target}.", "required_fields": ["target"] }
+    ],
+    "MoveUsed": [
+      { "text": "{actor} used {move}.", "required_fields": ["actor", "move"] }
+    ],
+    "DamageDealt": [
+      { "text": "{target} lost {pct}% HP.", "required_fields": ["target", "pct"] }
+    ],
+    "Critical": [
+      { "text": "Critical hit.", "required_fields": [] }
+    ],
+    "SuperEffective": [
+      { "text": "Super-effective damage.", "required_fields": [] }
+    ],
+    "NotVeryEffective": [
+      { "text": "Not very effective.", "required_fields": [] }
+    ],
+    "Immune": [
+      { "text": "No effect.", "required_fields": [] }
+    ],
+    "Miss": [
+      { "text": "Attack missed.", "required_fields": [] }
+    ],
+    "Faint": [
+      { "text": "{target} fainted.", "required_fields": ["target"] }
+    ],
+    "Switch": [
+      { "text": "Switched {actor} for {target}.", "required_fields": ["actor", "target"] }
+    ],
+    "GymClear": [
+      { "text": "{gym} Gym cleared.", "required_fields": ["gym"] }
+    ],
+    "GymFail": [
+      { "text": "{gym} Gym failed.", "required_fields": ["gym"] }
+    ]
+  }
+}

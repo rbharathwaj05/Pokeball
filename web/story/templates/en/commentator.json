@@ -1,0 +1,47 @@
+{
+  "tone": "commentator",
+  "name": "Commentator",
+  "templates": {
+    "GymStart": [
+      { "text": "We are live at the {gym} Gym, and the stakes could not be higher!", "required_fields": ["gym"] }
+    ],
+    "OpponentEnters": [
+      { "text": "Here comes {target}, stepping into the spotlight!", "required_fields": ["target"] }
+    ],
+    "MoveUsed": [
+      { "text": "{actor} fires off {move}!", "required_fields": ["actor", "move"] },
+      { "text": "Here goes {actor} with a fierce {move}!", "required_fields": ["actor", "move"] }
+    ],
+    "DamageDealt": [
+      { "text": "Big hit! {target} takes {pct}% damage!", "required_fields": ["target", "pct"] },
+      { "text": "That connects cleanly! {target} is down {pct}%!", "required_fields": ["target", "pct"] }
+    ],
+    "Critical": [
+      { "text": "Boom! A massive critical hit!", "required_fields": [] }
+    ],
+    "SuperEffective": [
+      { "text": "It's super-effective! Tremendous type advantage!", "required_fields": [] }
+    ],
+    "NotVeryEffective": [
+      { "text": "Barely a scratch — resisted by the opponent!", "required_fields": [] }
+    ],
+    "Immune": [
+      { "text": "No effect at all! Complete type immunity!", "required_fields": [] }
+    ],
+    "Miss": [
+      { "text": "It misses! A huge stroke of luck for the defender!", "required_fields": [] }
+    ],
+    "Faint": [
+      { "text": "{target} is down and out! Knockout!", "required_fields": ["target"] }
+    ],
+    "Switch": [
+      { "text": "Strategic swap: {actor} returns, and {target} enters!", "required_fields": ["actor", "target"] }
+    ],
+    "GymClear": [
+      { "text": "That is it! {gym} Gym has been cleared in dominant fashion!", "required_fields": ["gym"] }
+    ],
+    "GymFail": [
+      { "text": "And the run ends right here at {gym} Gym!", "required_fields": ["gym"] }
+    ]
+  }
+}

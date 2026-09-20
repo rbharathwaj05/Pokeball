@@ -1,0 +1,56 @@
+{
+  "tone": "chronicle",
+  "name": "Chronicle",
+  "templates": {
+    "GymStart": [
+      { "text": "The party advanced into the {gym} gym, standing before the leader's trial.", "required_fields": ["gym"] },
+      { "text": "Within the halls of {gym}, battle was joined.", "required_fields": ["gym"] }
+    ],
+    "OpponentEnters": [
+      { "text": "{target} emerged onto the arena, ready for battle.", "required_fields": ["target"] },
+      { "text": "The opposing trainer sent forth {target}.", "required_fields": ["target"] }
+    ],
+    "MoveUsed": [
+      { "text": "{actor} unleashed {move}.", "required_fields": ["actor", "move"] },
+      { "text": "{actor} channeled its power and executed {move}.", "required_fields": ["actor", "move"] },
+      { "text": "With calculated precision, {actor} struck with {move}.", "required_fields": ["actor", "move"] }
+    ],
+    "DamageDealt": [
+      { "text": "{target} staggered from the impact, sustaining {pct}% damage.", "required_fields": ["target", "pct"] },
+      { "text": "The blow connected hard, carving away {pct}% of {target}'s health.", "required_fields": ["target", "pct"] },
+      { "text": "{target} endured the assault, losing {pct}% HP.", "required_fields": ["target", "pct"] }
+    ],
+    "Critical": [
+      { "text": "The blow struck true — a devastating critical hit!", "required_fields": [] },
+      { "text": "A surgical strike: critical damage shattered the defense!", "required_fields": [] }
+    ],
+    "SuperEffective": [
+      { "text": "It was super-effective!", "required_fields": [] },
+      { "text": "The elemental affinity struck directly at the target's weakness.", "required_fields": [] }
+    ],
+    "NotVeryEffective": [
+      { "text": "The attack met heavy resistance, dealing reduced damage.", "required_fields": [] },
+      { "text": "It was not very effective.", "required_fields": [] }
+    ],
+    "Immune": [
+      { "text": "The attack had no effect against {target}.", "required_fields": ["target"] }
+    ],
+    "Miss": [
+      { "text": "The attack went wide, missing completely.", "required_fields": [] },
+      { "text": "{target} evaded the oncoming blow.", "required_fields": ["target"] }
+    ],
+    "Faint": [
+      { "text": "{target} collapsed to the arena floor, fainted.", "required_fields": ["target"] },
+      { "text": "Unable to battle on, {target} fell.", "required_fields": ["target"] }
+    ],
+    "Switch": [
+      { "text": "The trainer recalled {actor} and deployed {target}.", "required_fields": ["actor", "target"] }
+    ],
+    "GymClear": [
+      { "text": "Victory was secured; the {gym} gym was conquered!", "required_fields": ["gym"] }
+    ],
+    "GymFail": [
+      { "text": "The party fell in battle at {gym}. The challenge concluded.", "required_fields": ["gym"] }
+    ]
+  }
+}

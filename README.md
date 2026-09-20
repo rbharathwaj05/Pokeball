@@ -77,4 +77,40 @@ If expanded to National Dex (1,000+ species) or arbitrary custom pools:
 ## 5. Verification & Benchmark Results
 
 - **Test Suite**: `python -m pytest tests/test_gates.py` (17/17 Gates Passed)
-- **Gauntlet Evaluation**: 200 random seeds cleared with **95.5% win rate** (mean $7.85 / 8$ gyms, $21\text{ ms}$ per seed).
+- **Gauntlet Evaluation**: `python eval_agent.py --seeds 200` (95.5% win rate, mean 7.85/8 gyms, 21ms/seed).
+
+---
+
+## 6. Cinematic Storytelling Front End & Simulation Backend (Web Layer)
+
+An optional, turn-by-turn narrated cinematic front end where every story sentence is grounded in real simulation data with one-click access to the mathematical proofs.
+
+### Tech Stack
+
+| Layer | Technologies & Libraries | Purpose |
+|---|---|---|
+| **Core Battle Agent** | Python 3.14, NumPy, Polars, DuckDB, SciPy | Deterministic decision engine, damage calculator, and gauntlet runner. |
+| **Simulation Backend** | FastAPI, Pydantic v2, Starlette, Uvicorn | Telemetry enrichment, reason-code capture, and worked damage math APIs. |
+| **Story Engine** | Pure TypeScript (framework-free), Mulberry32 PRNG | Deterministic fact extraction, tone template interpolation, and stage cues. |
+| **Web Front End** | Svelte 5, Vite, TypeScript | Modern reactive UI, chapter ribbon, stage animations, and accessible narration. |
+| **Design System** | SCSS / CSS Variables, SVG Parchment Texture | 15 Gen I type color palettes, dark mode, responsive layout (360px to 4K). |
+| **Audio Synthesis** | WebAudio API (Zero external assets) | Procedural musical chimes, hit impacts, and critical-hit sound effects. |
+
+### Running the Web Application Locally
+
+1. **Start the Simulation Backend**:
+   ```powershell
+   python -m uvicorn web.backend.app:app --port 8000
+   ```
+
+2. **Start the Front End**:
+   ```powershell
+   cd web/frontend
+   npm run dev
+   ```
+   Open `http://127.0.0.1:5173` in your browser.
+
+3. **Run Web Unit Tests**:
+   - Backend APIs: `python -m pytest web/backend/tests/test_backend.py`
+   - Story Engine: `cmd.exe /c "npm run test:story"` (inside `web/frontend`)
+
