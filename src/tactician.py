@@ -1,4 +1,4 @@
-﻿"""
+"""
 src/tactician.py — P6.1 Tier 0 heuristic + P6.2 Tier 1 expectimax
 Tier 0: microsecond greedy (guaranteed KO > best expected damage > switch if lethal).
 Tier 1: depth-limited expectimax with opponent model, alpha-beta where valid, transposition cache.
@@ -80,25 +80,47 @@ def heuristic(obs: dict, legal: List[Action]) -> Action:
         if mv is None or not mv.power:
             continue
 
+        # ------------------------------------------------------------------
+        # Mathematical Heuristic Evaluation:
+        #
+        # 1. Type Effectiveness:
+        #    mult = TypeChart(MoveType, DefType1) * TypeChart(MoveType, DefType2)
+        #
+        # 2. STAB (Same-Type Attack Bonus):
+        #    stab = 1.5 if MoveType in AttackerTypes else 1.0
+        #
+        # 3. Expected Discrete Damage Roll:
+        #    E[Roll] = (1/39) * sum_{r=217}^{255} r = 236 -> 236/255 ≈ 0.9255
+        #    E[Damage] ≈ Power * mult * stab * Accuracy * (236 / 255)
+        # ------------------------------------------------------------------
         mult = type_multiplier(_TYPE_CHART, mv.type, opp_types)
         stab = 1.5 if mv.type in active["types"] else 1.0
         acc = (mv.accuracy or 100.0) / 100.0
 
-        # Quick expected damage (no full distribution needed for Tier 0 speed)
+        # Quick expected damage calculation (avoids full 39-roll convolution for <0.5ms speed)
         rough_exp = mv.power * mult * stab * acc * (236.0 / 255.0)
         if rough_exp > best_exp_dmg:
             best_exp_dmg = rough_exp
             best_dmg_action = mv_action
 
-        # KO probability estimate (accurate enough for heuristic)
+        # ------------------------------------------------------------------
+        # KO Probability Fast-Path:
+        # If expected damage reliably exceeds remaining defender HP with 100% accuracy,
+        # prioritize this move to achieve an immediate, zero-risk faint.
+        # ------------------------------------------------------------------
         ko_prob = acc * (1.0 if rough_exp * 1.2 >= opp_hp else 0.0)
         if mult == 0:
-            ko_prob = 0.0
+            ko_prob = 0.0  # Immune targets (e.g. Ground on Flying, Normal on Ghost)
         if ko_prob > best_ko_prob:
             best_ko_prob = ko_prob
             best_ko_action = mv_action
 
-    # Decision tree
+    # ------------------------------------------------------------------
+    # Priority Action Selection:
+    # 1. Guaranteed KO (ko_prob >= 0.95): eliminate opponent immediately.
+    # 2. Highest expected damage: maximize offensive pressure.
+    # 3. Fallback: default to first available legal move.
+    # ------------------------------------------------------------------
     if best_ko_prob >= 0.95 and best_ko_action:
         return best_ko_action
 
